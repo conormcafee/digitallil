@@ -1,0 +1,35 @@
+---
+title: Digitallil
+---
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/style.css" rel="stylesheet">
+  <title>Digitallil | {{ title }}</title>
+</head>
+<body class="min-h-screen bg-gray-300">
+  <header class="p-4 flex items-center justify-between gap-4">
+    
+    <a href="/" class="font-bold hover:text-purple-500">Digitallil</a>
+    
+    <nav class="flex items-center gap-2">
+      {% for link in navigation %}
+        <a href="{{ link.href }}" class="font-bold hover:text-purple-500">{{ link.label }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+
+  <main class="flex items-center justify-center mt-36">
+    <div>
+      <h1 class="font-mono text-3xl text-purple-500 font-bold">
+        Welcome to {{ title }}
+      </h1>
+
+      {{ content | safe }}
+    </div>
+  </main>
+</body>
+</html>
